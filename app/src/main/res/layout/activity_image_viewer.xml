@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:context=".ImageViewer">
+
+            <ProgressBar
+                android:id="@+id/progress_bar_imageViewer"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:indeterminate="true"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewer"
+                app:layout_constraintStart_toStartOf="@+id/imageViewer"
+                app:layout_constraintTop_toTopOf="@+id/imageViewer" />
+
+            <ImageView
+                android:id="@+id/imageViewer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:outlineProvider="background"
+                android:padding="2dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/loading_default1"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/artistToShowViewer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="28sp"
+                android:textColor="#212121"
+                android:text="Artist : Loading..."
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewer"
+                app:layout_constraintStart_toStartOf="@+id/imageViewer"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewer" />
+
+            <TextView
+                android:id="@+id/locationToShowViewer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="24sp"
+                android:text="Location : Loading..."
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/artistToShowViewer"
+                app:layout_constraintStart_toStartOf="@+id/artistToShowViewer"
+                app:layout_constraintTop_toBottomOf="@+id/artistToShowViewer" />
+
+            <TextView
+                android:id="@+id/infoToShowViewer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                android:text="Info : Loading..."
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/locationToShowViewer"
+                app:layout_constraintStart_toStartOf="@+id/locationToShowViewer"
+                app:layout_constraintTop_toBottomOf="@+id/locationToShowViewer" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
